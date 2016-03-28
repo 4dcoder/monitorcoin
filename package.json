@@ -1,0 +1,36 @@
+{
+  "name": "monitorcoin",
+  "version": "0.0.1",
+  "description": "Monitor coin is a small project build on [sails.js](http://sailsjs.org/). It's purpose is to fetch data from various digital coin exchanges and present them on a simple angular(v1.2.9) app.",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^0.7.7",
+    "bitcoin": "^2.0.1",
+    "cryptsy": "^0.1.3",
+    "datejs": "^1.0.0-beta",
+    "ejs": "^0.8.4",
+    "grunt": "^0.4.1",
+    "jsdom": "^0.10.1",
+    "moment": "^2.5.1",
+    "node-schedule": "^0.1.13",
+    "node-uuid": "^1.4.1",
+    "optimist": "^0.3.4",
+    "q": "^1.0.0",
+    "request": "^2.33.0",
+    "rest-validator": "^0.0.1",
+    "sails": "^0.9.8",
+    "sails-disk": "^0.9.3",
+    "sails-mysql": "^0.9.7",
+    "underscore": "^1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkravas/monitorcoin.git"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  },
+  "author": "George Kravas",
+  "license": "MIT"
+}

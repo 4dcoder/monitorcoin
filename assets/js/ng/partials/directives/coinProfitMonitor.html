@@ -1,0 +1,32 @@
+<section class="widget">
+    <header>{{coinCode}}<i class="fa fa-eye-slash" style="float: right; cursor: pointer; cursor: hand;" ng-click="showHideCoinModal()" popover="Hide widget" popover-trigger="mouseenter"></i></header>
+    <div class="body no-margin">
+        <div>
+            <img src="/img/coins/uknownCoin.png" style="height: 128px; width: 128px; display: block; margin: 10px auto 10px auto;">
+        </div>
+        <div class="visits-info well well-sm">
+            <div class="row">
+                <div class="col-sm-12 col-xs-6">
+                    <div style="float: left; cursor: pointer; cursor: hand;" ng-click="showChart( 'fiveMinutes' )"><i class="fa fa-plus-square"></i> Last Five Minutes</div>
+                    <div style="float: right">{{profits.fiveMinutes.profitPercent}}<i class="fa fa-{{profits.fiveMinutes.arrow}} color-{{profits.fiveMinutes.color}}"></i></div>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                    <div style="float: left; cursor: pointer; cursor: hand;" ng-click="showChart( 'hourly' )"><i class="fa fa-plus-square"></i> Last Hour</div>
+                    <div style="float: right">{{profits.hourly.profitPercent}}<i class="fa fa-{{profits.hourly.arrow}} color-{{profits.hourly.color}}"></i></div>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                    <div style="float: left; cursor: pointer; cursor: hand;" ng-click="showChart( 'daily' )"><i class="fa fa-plus-square"></i> Last Day</div>
+                    <div style="float: right">{{profits.daily.profitPercent}}<i class="fa fa-{{profits.daily.arrow}} color-{{profits.daily.color}}"></i></div>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                    <div style="float: left; cursor: pointer; cursor: hand;" ng-click="showChart( 'weekly' )"><i class="fa fa-plus-square"></i> Last Week</div>
+                    <div style="float: right">{{profits.weekly.profitPercent}}<i class="fa fa-{{profits.weekly.arrow}} color-{{profits.weekly.color}}"></i></div>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                    <div style="float: left; cursor: pointer; cursor: hand;" ng-click="showChart( 'monthly' )"><i class="fa fa-plus-square"></i> Last Month</div>
+                    <div style="float: right">{{profits.monthly.profitPercent}}<i class="fa fa-{{profits.monthly.arrow}} color-{{profits.monthly.color}}"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,84 @@
+
+<div id="register" class="single-widget-container animate-show" ng-hide="isLoginVisible">
+    <section class="widget login-widget">
+        <header class="text-align-center">
+            <h4>Login to your account</h4>
+        </header>
+        <div class="body">
+            <form name="registerForm" class="" autocomplete="on" ng-submit="register()">
+                <fieldset>
+                    <div class="form-group no-margin" ng-class="{error:registerForm.username.$invalid}">
+                        <label for="username" >Username</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="eicon-user"></i>
+                                </span>
+                            <input id="username" name="username" class="form-control input-lg" required ng-minlength="4" ng-maxlenth="8"
+                                   placeholder="Your Username" ng-model="registerData.username">
+                        </div>
+                        <div ng-show="registerForm.username.$error.minlength" class="help-inline animate-show cl-orange">Username should be minimum 4 character</div>
+                        <div ng-show="registerForm.username.$error.maxlength" class="help-inline animate-show cl-orange">Username should be minimum 8 character</div>
+                    </div>
+
+                    <div class="form-group no-margin">
+                        <label for="email" >email</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="eicon-user"></i>
+                                </span>
+                            <input id="email" type="email" name="email" required id="emailsignup" class="form-control input-lg" placeholder="Your email" ng-model="registerData.email">
+                        </div>
+                        <div ng-show="registerForm.email.$error.email" class="help-inline animate-show cl-orange">This is not a valid email address</div>
+
+                    </div>
+
+                    <div class="form-group" ng-class="{error: registerForm.password.$invalid}">
+                        <label for="password" >Password</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            <input id="password" name="password" type="password" class="form-control input-lg" placeholder="Your Password" ng-model="registerData.password" required ng-minlength="5" ng-maxlength="8">
+                        </div>
+                        <div ng-show="registerForm.password.$error.minlength" class="help-inline animate-show cl-orange">Password should be minimum 5 character</div>
+
+                        <label for="password-repeat" >Password Confirmation</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            <input id="password-repeat" name="password-repeat"  type="password" class="form-control input-lg" placeholder="Your Password" ng-model="registerData.passwordConfirmation">
+                        </div>
+
+
+                        <footer class="animate-show" ng-show="message != null">
+                            <div class="btn-danger text-center">
+                                <div style="font-size: 14px; padding-top:5px; height:30px;">{{message}}</div>
+                            </div>
+                        </footer>
+                    </div>
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-block btn-lg btn-danger">
+                        <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                        <small>Sign Up</small>
+                    </button>
+                    <div class="forgot"><a ng-click="showLogin()" style="cursor: pointer;">Already signed up? Go on log in</a></div>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <!--
+            <div class="facebook-login">
+                <a href="index.html"><span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span></a>
+            </div>
+            -->
+        </footer>
+
+    </section>
+</div>

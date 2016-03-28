@@ -1,0 +1,39 @@
+<div ng-controller="ModalCoinCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="coinList">
+            <div class="modal-header">
+                <h3>Add Your Coins</h3>
+            </div>
+            <div class="modal-body" ng-controller="CoinCtrl">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Code <i class="fa"></i></th>
+                            <th class="text-center">Name <i class="fa"></i></th>
+                            <th class="text-center">Address Box <i class="fa"></i></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="coin in coins | filter:query">
+                            <td>{{coin.wallets[0].coin.code}}</td>
+                            <td>{{coin.wallets[0].coin.name}}</td>
+                            <td><input type="text" class="form-control" placeholder="Address" name="{{coin.wallets[0].coin.code}}" /></td>
+                            <td><input type="submit" class="btn btn-primary" value="submit" style="width:60px; text-align:center; padding:5px 10px" /></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </script>
+    <li style="padding:10px 15px; width:100%;"><a href="" ng-click="open()"><i class="fa fa-dashboard"></i> Add Coins</a></li>
+
+</div>

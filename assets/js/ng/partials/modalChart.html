@@ -1,0 +1,22 @@
+<div class="modal-dialog " style="margin: auto auto;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close();">×</button>
+            <h4 class="modal-title">{{title}}</h4>
+        </div>
+        <div class="modal-body" style="height: 320px;">
+            <nvd3-line-chart
+                    data="chartData"
+                    id="chart"
+                    showXAxis="true"
+                    showYAxis="true"
+                    tooltips="true"
+                    interactive="true"
+                    xAxisTickFormat="xAxisDateFormat()"
+                    margin="{left:50,top:50,bottom:50,right:50}"
+                    >
+                <svg></svg>
+            </nvd3-line-chart>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

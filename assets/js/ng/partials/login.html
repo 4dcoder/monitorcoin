@@ -1,0 +1,64 @@
+
+<div id="login" class="single-widget-container animate-show" ng-hide="!isLoginVisible">
+    <section class="widget login-widget">
+        <header class="text-align-center">
+            <h4>Login to your account</h4>
+        </header>
+        <div class="body">
+            <form class="" name="loginForm" autocomplete="on" ng-submit="login()">
+                <fieldset>
+                    <div class="form-group no-margin">
+                        <label for="username" >Username</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="eicon-user"></i>
+                                </span>
+                            <input id="username" name="username" class="form-control input-lg"
+                                   placeholder="Your Username" ng-model="loginData.username" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" >Password</label>
+
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            <input id="password" name="password" type="password" class="form-control input-lg"
+                                   placeholder="Your Password" ng-model="loginData.password">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-block btn-lg btn-success">
+                        <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                        <small>Sign In</small>
+                    </button>
+                    <div class="forgot"><a ng-click="showRegister()" style="cursor: pointer;">You dont have an account yet? Join us</a></div>
+                </div>
+            </form>
+        </div>
+
+        <footer class="animate-show" ng-show="message != null">
+            <div class="btn-danger text-center">
+                <div style="font-size: 14px; padding-top:5px; height:30px;">{{message}}</div>
+            </div>
+        </footer>
+
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+<div class="row" ng-controller="WalletCtrl">
+    <div class="col-lg-12 center cl-white">
+        <br/>
+        <br/>
+        You have not add any coins yet.<br/>
+        <br/>
+        <!-- Button trigger modal -->
+
+
+        <div ng-controller="ModalCoinCtrl">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="coinList">
+                    <div class="modal-header">
+                        <h3>Add Your Coins</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="table-responsive" ng-controller="WalletCtrl">
+                            <form ng-submit="saveWallets()">
+                                <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Code <i class="fa"></i></th>
+                                    <th class="text-center">Name <i class="fa"></i></th>
+                                    <th class="text-center">Address Box <i class="fa"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody ng-controller="CoinCtrl">
+                                <tr ng-repeat="coin in coins | filter:query">
+                                    <td>{{coins.code}}</td>
+                                    <td>{{coins.name}}</td>
+                                    <td><input type="text" class="form-control" placeholder="Address"
+                                               name="{{coins.code}}"/>
+									</td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Address"
+                                               name="address[{{coin.name}}]" value="{{wallets.}}"/>
+                                        <div id="template1" ng-cloak>{{ coin.name }}</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <!--
+                                <button class="btn btn-primary" type="submit">Save</button>
+                                -->
+                                <input class="btn btn-primary" type="submit" value="Save" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" ng-click="ok()">OK</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </script>
+            <button style="width:400px;" class="btn btn-success" ng-click="open()">Add Coins</button>
+        </div>
+
+
+    </div>
+    <div ng-hide="wallets.length == 0">
+        <div class="col-lg-3 text-center">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" ng-model="query" placeholder="coin search">
+                        <span class="input-group-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 text-center">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" style="background-color: #fff;">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Code <i class="fa"></i></th>
+                        <th class="text-center">Name <i class="fa"></i></th>
+                        <th class="text-center">Address Box <i class="fa"></i></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="wallet in wallets | filter:query">
+                        <td>{{wallet.coin.code}}</td>
+                        <td>{{wallet.coin.name}}</td>
+                        <td><input type="text" class="form-control" placeholder="Address" id="{{wallet.id}}"
+                                   value="{{wallet.address}}"/></td>
+                        <td><input type="submit" class="btn btn-primary" value="submit"
+                                   style="width:60px; text-align:center; padding:5px 10px"/></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

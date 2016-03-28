@@ -1,0 +1,35 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="coinList">
+        <div class="modal-header">
+            <h3>Add Your Coins</h3>
+        </div>
+        <div class="modal-body" ng-controller="AvailableCoinListCtrl">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Name <i class="fa"></i></th>
+                        <th class="text-center">Value <i class="fa"></i></th>
+                        <th class="text-center">Address Box <i class="fa"></i></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="coin in coins | filter:query">
+                        <td>{{coin.name}}</td>
+                        <td>{{coin.value}}</td>
+                        <td><input type="text" class="form-control" placeholder="Address" name="{{coin.name}}" /></td>
+                        <td><input type="submit" class="btn btn-primary" value="submit" style="width:60px; text-align:center; padding:5px 10px" /></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</script>

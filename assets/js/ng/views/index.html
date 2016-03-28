@@ -1,0 +1,53 @@
+<div id="wrapper">
+
+    <div class="logo">
+        <h4><a href="exchangeMonitor">Monitor<strong>Coin</strong></a></h4>
+    </div>
+    <div ng-include="'/js/ng/partials/monitor/sidebar.html'"></div>
+
+    <div class="wrap">
+        <header class="page-header">
+            <div ng-include="'/js/ng/partials/monitor/navigationBar.html'"></div>
+        </header>
+        <div ng-if="state === 'exchangeMonitor'" class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="page-title">Crypto Currency Coins <small>({{coins.length}} / {{totalCoins}})</small></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div coin-profit-monitor ng-repeat="coin in coins" coin-code="{{coin.code}}" class="col-md-3 coin-widget" id="coin_{{coin.code}}"></div>
+            </div>
+        </div>
+        <div ng-if="state === 'coinsVisibility'" class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="page-title">Coins Visibility <small>Select coins of interest</small></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group col-md-2">
+                    <toggle-switch model="switchModel.showAll" on-label="Show All" off-label="Hide All"></toggle-switch>
+                </div>
+                <div class="control-group col-md-3">
+                    <button type="button" class="btn btn-success" ng-click="saveHiddenCoins()">Save</button>
+                </div>
+            </div>
+            <div class="row">
+                <div ng-repeat="coin in coins" class="control-group col-md-1">
+                    <label for="'switch_'{{coin.code}}" class="control-label">{{coin.code}}</label>
+                    <div class="controls form-group">
+                        <toggle-switch id="'switch_'{{coin.code}}" model="hiddenCoins[ coin.code ]"></toggle-switch>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group col-md-3">
+                    <button type="button" class="btn btn-success btn-lg" ng-click="saveHiddenCoins()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div><!-- /#wrapper -->
